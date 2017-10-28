@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<body class="black">
+<div>
+  <h1>
+      {{nombre2}}
+  </h1>
+  
+  <button (click)= "ocuverNombres()" class="btn" >{{montrarNombres ? 'Ocultar Nombres': 'Mostrar Nombres'}} </button>
+  
+      <div *ngIf="montrarNombres" class="component2">
+          <h3>Nombres:</h3>
+          <ul>
+              <li *ngFor="let Nombre of Nombres" >
+                {{Nombre}}
+              </li>
+          </ul>
+
+
+          <form (submit)="nuevoNombre(newNombre)">
+            <input #newNombre type="text" name="Nombre" placeholder="Nombre">
+          </form>
+      </div>
+     
+  </div>
+</body>
